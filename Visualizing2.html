@@ -1,0 +1,101 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var DomainData = google.visualization.arrayToDataTable([
+      ['Major', 'Degrees'],
+      ['horangi', 152844], ['SGBOSQL01', 6],
+      ['SGDB01', 5], ['SGDISQLDEV', 5],
+      ['SGHYBRID01', 1]]);
+
+    var ProtocolData = google.visualization.arrayToDataTable([
+      ['Major', 'Degrees'],
+      ['NTLM', 43057], ['Authz', 314],
+      ['C', 392], ['Kerberos', 108759],
+      ['Negotiate', 97216]]);
+	  
+	var LogonType = google.visualization.arrayToDataTable([
+      ['Major', 'Degrees'],
+      ['2', 38], ['3', 152522],
+      ['10', 283], ['other', 0],
+      ['other', 0]]);
+
+    var LogFile = google.visualization.arrayToDataTable([
+      ['Major', 'Degrees'],
+      ['t:\working_evd\SGBOSQL01\2016-05-12_212917\may10_evts.csv', 3], ['t:\working_evd\SGBOSQL01\2016-05-12_212917\SGBOSQL01_evts.csv', 48790],
+      ['t:\working_evd\SGDB01\2016-05-11_085026\SGDB01_evts.csv', 9783], ['t:\working_evd\SGdisqldev\2016-05-10_183548\SGDISQLDEV_evts.csv', 19940],
+      ['t:\working_evd\SGIIS01\2016-05-10_183329\SGIIS01_evts.csv', 6256]]);
+	  
+	var TypeData = google.visualization.arrayToDataTable([
+      ['Major', 'Degrees'],
+      ['Interactive', 38], ['Network', 152522],
+      ['RDP', 283], ['others', 0],
+      ['others', 0]]);
+
+    var EventIDData = google.visualization.arrayToDataTable([
+      ['Major', 'Degrees'],
+      ['528', 70], ['540', 136988],
+      ['4624', 15785], ['others', 0],
+      ['others', 0]]);
+	  
+	  
+	  
+	  
+	
+	  
+	  
+	  
+    var option1 = {
+          title: 'Domain'
+        };
+		
+    var option2 = {
+          title: 'Auth Protocol'
+        };
+		
+    var option3 = {
+          title: 'LogonType'
+        };
+		
+	var option4 = {
+          title: 'Log FIle'
+        };
+					
+	var option5 = {
+          title: 'Type'
+        };
+		
+	var option6 = {
+          title: 'EventID'
+        };
+
+    var DomainData_1 = new google.visualization.PieChart(document.getElementById('DomainData_2'));
+    var ProtocolData_1 = new google.visualization.PieChart(document.getElementById('ProtocolData_2'));
+	var LogonType_1 = new google.visualization.PieChart(document.getElementById('LogonType_2'));
+    var LogFile_1 = new google.visualization.PieChart(document.getElementById('LogFile_2'));
+	var TypeData_1 = new google.visualization.PieChart(document.getElementById('TypeData_2'));
+    var EventIDData_1 = new google.visualization.PieChart(document.getElementById('EventIDData_2'));
+	
+	
+	
+
+    
+
+    DomainData_1.draw(DomainData, option1);
+    ProtocolData_1.draw(ProtocolData, option2);
+	LogonType_1.draw(LogonType, option3);
+    LogFile_1.draw(LogFile, option4);
+	TypeData_1.draw(TypeData, option5);
+    EventIDData_1.draw(EventIDData, option6);
+
+
+  }
+</script>
+<span id='DomainData_2' style='width: 450px; display: inline-block'></span>
+<span id='ProtocolData_2' style='width: 450px; display: inline-block'></span>
+<span id='LogonType_2' style='width: 450px; display: inline-block'></span>
+<span id='LogFile_2' style='width: 450px; display: inline-block'></span>
+<span id='TypeData_2' style='width: 450px; display: inline-block'></span>
+<span id='EventIDData_2' style='width: 450px; display: inline-block'></span>
+
